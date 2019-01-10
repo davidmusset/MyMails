@@ -1,0 +1,146 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F5F6FA;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  min-height: 97vh;
+}
+h6 {
+  font-size: 14px;
+  margin: 0px;
+}
+
+.trash {
+  width : 15px;
+  padding: 10px;
+}
+
+.text{
+  width: 100%;
+}
+
+.avatar {
+  width : 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.row{
+  border-top: 1px solid #E8E8E8;
+  border-left: 1px solid #E8E8E8;
+  border-right: 1px solid #E8E8E8;
+  background-color: #FFFFFF;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  padding: 15px;
+}
+.rowcounter{
+  border-top: 1px solid #E8E8E8;
+  border-left: 1px solid #E8E8E8;
+  border-right: 1px solid #E8E8E8;
+  background-color: #FFFFFF;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  padding: 15px;
+}
+.add{
+  border-top: 1px solid #E8E8E8;
+  border-left: 1px solid #E8E8E8;
+  border-right: 1px solid #E8E8E8;
+  background-color: #D1DDE3;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  padding: 15px;
+}
+.lastrow{
+  border-top: 1px solid #E8E8E8;
+  border-left: 1px solid #E8E8E8;
+  border-right: 1px solid #E8E8E8;
+  background-color: #FFFFFF;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.ajout{
+  border: 1px solid #E8E8E8;
+  background-color: #FFFFFF;
+  width: 30%;
+  display:flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input{
+  margin:10px;
+}
+
+#lastborder{
+  width: 50%;
+  display:flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+#counter{
+  padding: 0;
+  margin:0;
+}
+#nb{
+  font-weight: bold;
+}
+
+#submit:hover{
+  background-color: #097D8A;
+  color:#FFFFFF;
+}
+
+
+#submit{
+  padding: 3px;
+  margin-left: 5px;
+  border: 1px solid #097D8A;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: #097D8A;
+  text-decoration: none;
+}
+a #submit{
+  text-decoration: none !important;
+}
+
+#nom{
+  border: 1px solid #E8E8E8;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  width: 20%;
+  margin-right: 10px;
+}
+#message{
+  border: 1px solid #E8E8E8;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  width: 80%;
+}
+
+#allchat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
