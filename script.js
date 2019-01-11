@@ -1,32 +1,33 @@
 var nbligne = $(".row").length;
-document.getElementById('nb').textContent = nbligne;
-var firsttimenom = 0
-var firsttimemsg = 0
-var row = document.getElementsByClassName('row');
-
-
+$("#nb").text(nbligne);
+var firsttimenom = 0;
+var firsttimemsg = 0;
+var row = $('.row');
+var newnom = $("#nom").value();
+var newdescr = $("#message").text();
+console.log(newnom);
 
 // Ajout du clic sur la corbeille
 $(".trash").each(
   function()
   {
     console.log("hh");
-    $("#test").click(
+    $(this).click(
     function(){
-      console.log("hello");
-      this.parentNode.parentNode.remove();
+      $(this).parent().parent().remove();
       nbligne = nbligne -1;
-      document.getElementById('nb').textContent = nbligne ;
+      $("#nb").text(nbligne); ;
     }
     )
   }
 )
 
 // Ajout du nouveau message
-document.getElementById('submit').addEventListener("click",function()
-{
+$("#submit").click(
+  function(){
+    console.log($("#message").value());
   //vérification que le message et le nom sont corrects
-  if ((document.getElementById("nom").value != "") && (document.getElementById("message").value != "")){
+  if ((newnom != "") && (newdescr != "")){
 
     //creation de la nouvelle div
     var newrow = document.createElement("div");
