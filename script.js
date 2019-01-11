@@ -10,7 +10,7 @@ $(".trash").each(
   {
     $(this).click(
     function(){
-      $(this).parent().parent().remove();
+      $(this).parent().parent().fadeOut(500);
       nbligne = nbligne -1;
       $("#nb").text(nbligne); ;
     }
@@ -42,7 +42,7 @@ $("#submit").click(
     //ajout clic suppression poubelle
     $('.trash').click(
       function(){
-        $(this).parent().parent().remove();
+        $(this).parent().parent().fadeOut(500);
         nbligne = nbligne -1;
         $("#nb").text(nbligne); ;
       }
@@ -64,6 +64,7 @@ else {
   //bouton search
   var idsearch=$('#submitsearch');
 
+  //création de la fonction de recherche
   function rechercher(){
       //récupération de l'input
       var valuesearch=$('#search').val();
@@ -77,15 +78,13 @@ else {
       })
     }
 
-  idsearch.click(rechercher);
+  // //si clic sur bouton search
+  // idsearch.click(rechercher);
 
   var input = document.getElementById("search");
-  //idem pour appui sur bouton entrée
-  input.addEventListener("keyup", function(event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
+  //idem lorsqu'on tape.
+  input.addEventListener("keyup", function() {
     rechercher();
-  }
   }
 )
 
