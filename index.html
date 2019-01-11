@@ -12,11 +12,12 @@
 <body>
   <div class="rowcounter">
     <p id="counter"> Messages total: <span id="nb"></span></p>
+    <input id="search" type="text" placeholder="Rechercher"> <a id="submitsearch" class="submit" href=#>Search</a>
   </div>
   <div class="add">
-    <input id="nom" type="text" placeholder="Nom" value="">
-    <textarea id="message" type="textarea" placeholder="Nouveau Message" value=""></textarea>
-    <a id="submit" href=#>Add</a>
+    <input id="nom" type="text" placeholder="Nom">
+    <textarea id="message" type="textarea" placeholder="Nouveau Message"></textarea>
+    <a id="submit" class="submit" href=#>Add</a>
   </div>
 
   <div id="allchat">
@@ -28,7 +29,7 @@
         <p>Donec id elit non mi porta gravida at eget m
         </p>
       </div>
-      <a href=#><img class="trash" src="trash.png" alt="poubelle"></a>
+      <a href=#><img class="trash" id="test" src="trash.png" alt="poubelle"></a>
     </div>
     <div class="row">
       <img class="avatar" src="avatar-2.jpg">
@@ -37,7 +38,7 @@
         <p>Donec id elit non mi porta gravida at eget m
         </p>
       </div>
-      <a href=#><img id="test" class="trash" src="trash.png" alt="poubelle"></a>
+      <a href=#><img class="trash" src="trash.png" alt="poubelle"></a>
     </div>
     <div class="row">
       <img class="avatar" src="avatar-3.jpg">

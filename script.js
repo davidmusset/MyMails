@@ -3,15 +3,11 @@ $("#nb").text(nbligne);
 var firsttimenom = 0;
 var firsttimemsg = 0;
 var row = $('.row');
-var newnom = $("#nom").value();
-var newdescr = $("#message").text();
-console.log(newnom);
 
 // Ajout du clic sur la corbeille
 $(".trash").each(
   function()
   {
-    console.log("hh");
     $(this).click(
     function(){
       $(this).parent().parent().remove();
@@ -22,64 +18,35 @@ $(".trash").each(
   }
 )
 
-// Ajout du nouveau message
+
+// Ajout du nouveau message en JQUERY
 $("#submit").click(
   function(){
-    console.log($("#message").value());
+    //récupération des inputs
+    var newnom = $("#nom").val();
+    var newdescr = $("#message").val();
+
+    //on récupère le paragraphe
+    var para = $("#allchat");
   //vérification que le message et le nom sont corrects
   if ((newnom != "") && (newdescr != "")){
 
-    //creation de la nouvelle div
-    var newrow = document.createElement("div");
-    newrow.className="row";
-
-    //creation du nouvel avatar
-    var newavatar = document.createElement('img');
-    //numero random
+    //numero avatar random
     var numeroAvatar = Math.floor(Math.random()*3 + 1);
-    newavatar.src="avatar-"+numeroAvatar+".jpg";
-    newavatar.className="avatar";
-    newrow.appendChild(newavatar);
+    var avatar="avatar-"+numeroAvatar+".jpg";
 
-    //creation du nouveau div text
-    var newtext = document.createElement("div");
-    newtext.className="text";
-    newrow.appendChild(newtext);
+    //creation de la nouvelle div en jquery et ajout
+    var newdiv = '<div class="row"> <img class="avatar" src="'+avatar+'"><div class="text"><h6>'+newnom+'</h6> <p>'+newdescr+'</p> </div> <a href=#> <img class="trash" src="trash.png" alt="poubelle"></a></div>';
+    para.prepend(newdiv);
 
-    //recuperation du nom
-    var newh6 = document.createElement("h6");
-    newh6.innerHTML= document.getElementById("nom").value;
-    newtext.appendChild(newh6);
-
-    //récupération du message
-    var newp = document.createElement("p");
-    newp.innerHTML=document.getElementById("message").value;
-    newtext.appendChild(newp);
-
-    //nouvel icone poubelle
-    var newlink = document.createElement("a");
-    newlink.href="#";
-    newrow.appendChild(newlink);
-
-    var newtrash = document.createElement("img");
-    newtrash.className="trash";
-    newtrash.src="trash.png";
-    newtrash.alt="poubelle";
-    newlink.appendChild(newtrash);
-
-    // On insert tout au tout début
-    var eElement = document.getElementById('allchat')
-    eElement.insertBefore(newrow,eElement.firstChild);
-    nbligne = nbligne + 1;
-    document.getElementById('nb').textContent = nbligne;
-
-    //ajout du clic de suppression sur la poubelle et mise à jour du counter
-    newlink.addEventListener("click",function(){
-      this.parentNode.remove();
-      nbligne = nbligne -1;
-      document.getElementById('nb').textContent = nbligne ;
-    }
-    )
+    //ajout clic suppression poubelle
+    $('.trash').click(
+      function(){
+        $(this).parent().parent().remove();
+        nbligne = nbligne -1;
+        $("#nb").text(nbligne); ;
+      }
+    );
 
     //reinitialisation du message de l'input à ""
     document.getElementById("nom").value = "";
@@ -89,8 +56,37 @@ $("#submit").click(
 else {
       alert("Nom ou Message incorrect");
 }
-
 }
+)
+
+
+//Code du champ de Recherche
+  //bouton search
+  var idsearch=$('#submitsearch');
+
+  function rechercher(){
+      //récupération de l'input
+      var valuesearch=$('#search').val();
+      $("h6").each(function(){
+        if(!$(this).text().toLowerCase().includes(valuesearch.toLowerCase())){
+          $(this).parent().parent().hide()
+        }
+        else{
+          $(this).parent().parent().show();
+        }
+      })
+    }
+
+  idsearch.click(rechercher);
+
+  var input = document.getElementById("search");
+  //idem pour appui sur bouton entrée
+  input.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    rechercher();
+  }
+  }
 )
 
 
