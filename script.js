@@ -1,22 +1,26 @@
-var nbligne = document.getElementsByClassName('row').length;
+var nbligne = $(".row").length;
 document.getElementById('nb').textContent = nbligne;
 var firsttimenom = 0
 var firsttimemsg = 0
 var row = document.getElementsByClassName('row');
-var trash = document.getElementsByClassName('trash');
 
 
 
 // Ajout du clic sur la corbeille
-for (i = 0; i < nbligne; i++){
-  trash[i].addEventListener("click",function(){
-    function(){this.parentNode.parentNode.remove();
-    nbligne = nbligne -1;
-    document.getElementById('nb').textContent = nbligne ;
+$(".trash").each(
+  function()
+  {
+    console.log("hh");
+    $("#test").click(
+    function(){
+      console.log("hello");
+      this.parentNode.parentNode.remove();
+      nbligne = nbligne -1;
+      document.getElementById('nb').textContent = nbligne ;
+    }
+    )
   }
 )
-}
-
 
 // Ajout du nouveau message
 document.getElementById('submit').addEventListener("click",function()
