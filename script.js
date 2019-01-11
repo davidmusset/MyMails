@@ -5,10 +5,12 @@ var firsttimemsg = 0
 var row = document.getElementsByClassName('row');
 var trash = document.getElementsByClassName('trash');
 
+
+
 // Ajout du clic sur la corbeille
 for (i = 0; i < nbligne; i++){
   trash[i].addEventListener("click",function(){
-    this.parentNode.parentNode.remove();
+    function(){this.parentNode.parentNode.remove();
     nbligne = nbligne -1;
     document.getElementById('nb').textContent = nbligne ;
   }
@@ -72,7 +74,11 @@ document.getElementById('submit').addEventListener("click",function()
       nbligne = nbligne -1;
       document.getElementById('nb').textContent = nbligne ;
     }
-  )
+    )
+
+    //reinitialisation du message de l'input à ""
+    document.getElementById("nom").value = "";
+    document.getElementById("message").value = "";
 
   }
 else {
